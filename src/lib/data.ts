@@ -182,22 +182,34 @@ export const businesses: Business[] = [
 
 export const events: Event[] = [
   {
-    id: "1", title: "EBBA Reactivation Meeting", description: "Open community meeting to discuss reactivating the East Broadway Business Association. All corridor businesses and residents welcome.", date: "2026-04-15", end_date: null, time: "6:00 PM - 8:00 PM", location: "The Broadway Theater, 816 E Broadway", category: "Meeting", image_url: null, is_approved: true, submitted_by: null, submitted_email: null, created_at: "",
+    id: "1", title: "Logan Street Market — Live Music Tuesdays", description: "Weekly live music every Tuesday evening at Logan Street Market, just blocks from East Broadway. Local artists perform 6:30-8:30pm. Free admission.", date: "2026-04-08", end_date: null, time: "6:30 PM - 8:30 PM", location: "Logan Street Market, 1001 Logan St", category: "Arts & Culture", image_url: null, is_approved: true, submitted_by: null, submitted_email: null, created_at: "",
   },
   {
-    id: "2", title: "East Broadway Corridor Walk", description: "Guided walking tour of East Broadway businesses and the Epping District revitalization project. Meet local business owners and learn about corridor history.", date: "2026-04-26", end_date: null, time: "10:00 AM - 12:00 PM", location: "Meet at Locals Food Hub, 822 E Broadway", category: "Community", image_url: null, is_approved: true, submitted_by: null, submitted_email: null, created_at: "",
+    id: "2", title: "Louisville Stoneware Factory Tour", description: "Twice-daily factory tours at Louisville Stoneware, handcrafting pottery since 1815. See artisans at work and try the paint-your-own experience. Tours Mon-Fri.", date: "2026-04-14", end_date: null, time: "10:30 AM & 1:00 PM", location: "Louisville Stoneware, 731 Brent St", category: "Community", image_url: null, is_approved: true, submitted_by: null, submitted_email: null, created_at: "",
   },
   {
-    id: "3", title: "Small Business Workshop: Digital Marketing 101", description: "Free workshop for corridor businesses on social media, Google Business profiles, and digital marketing basics.", date: "2026-05-08", end_date: null, time: "6:00 PM - 8:00 PM", location: "The Broadway Theater, 816 E Broadway", category: "Workshop", image_url: null, is_approved: true, submitted_by: null, submitted_email: null, created_at: "",
+    id: "3", title: "Rhiannon Giddens at Paristown Hall", description: "Grammy and Pulitzer Prize-winning artist Rhiannon Giddens performs at Old Forester's Paristown Hall, just steps from the East Broadway corridor.", date: "2026-04-19", end_date: null, time: "7:00 PM", location: "Old Forester's Paristown Hall, 724 Brent St", category: "Arts & Culture", image_url: null, is_approved: true, submitted_by: null, submitted_email: null, created_at: "",
   },
   {
-    id: "4", title: "East Broadway Spring Market", description: "Outdoor market featuring local vendors, food trucks, live music, and family activities along the corridor.", date: "2026-05-17", end_date: null, time: "10:00 AM - 4:00 PM", location: "East Broadway Corridor (800 block)", category: "Market", image_url: null, is_approved: true, submitted_by: null, submitted_email: null, created_at: "",
+    id: "4", title: "Smoketown Neighborhood Association Meeting", description: "Monthly neighborhood association meeting. Open to all Smoketown residents and business owners. Held 3rd Monday of every month.", date: "2026-04-20", end_date: null, time: "6:30 PM - 8:00 PM", location: "YouthBuild & Bates Church, Smoketown", category: "Meeting", image_url: null, is_approved: true, submitted_by: null, submitted_email: null, created_at: "",
   },
   {
-    id: "5", title: "First Friday at GIG Louisville", description: "Monthly live music night showcasing local talent. Special EBBA member pricing on food and drinks.", date: "2026-06-05", end_date: null, time: "7:00 PM - 11:00 PM", location: "GIG Louisville, 1017 E Broadway", category: "Arts & Culture", image_url: null, is_approved: true, submitted_by: null, submitted_email: null, created_at: "",
+    id: "5", title: "Kentucky Derby Festival miniMarathon & Marathon", description: "The annual Humana Kentucky Derby Festival miniMarathon & Marathon winds through downtown Louisville. Cheer on runners from the East Broadway corridor!", date: "2026-04-25", end_date: null, time: "7:00 AM", location: "Downtown Louisville", category: "Festival", image_url: null, is_approved: true, submitted_by: null, submitted_email: null, created_at: "",
   },
   {
-    id: "6", title: "Corridor Cleanup Day", description: "Community volunteer day to beautify the East Broadway corridor. Supplies provided. All ages welcome.", date: "2026-06-14", end_date: null, time: "9:00 AM - 12:00 PM", location: "Meet at Family Health Centers, 834 E Broadway", category: "Volunteer", image_url: null, is_approved: true, submitted_by: null, submitted_email: null, created_at: "",
+    id: "6", title: "Winsday — Derby Week Nonprofit Celebration", description: "A Derby Week event celebrating local nonprofits. Connect with Louisville's mission-driven community during the city's biggest week.", date: "2026-04-29", end_date: null, time: "5:00 PM - 9:00 PM", location: "Downtown Louisville", category: "Community", image_url: null, is_approved: true, submitted_by: null, submitted_email: null, created_at: "",
+  },
+  {
+    id: "7", title: "Sepultura at Paristown Hall", description: "Sepultura's Celebrating Life Through Death Final North American Tour 2026 at Old Forester's Paristown Hall.", date: "2026-05-05", end_date: null, time: "6:30 PM", location: "Old Forester's Paristown Hall, 724 Brent St", category: "Arts & Culture", image_url: null, is_approved: true, submitted_by: null, submitted_email: null, created_at: "",
+  },
+  {
+    id: "8", title: "Fleur de Flea Outdoor Vintage Market", description: "The popular Fleur de Flea Vintage Urban Market hosts an outdoor market event. 150+ vendors selling vintage, vinyl, antiques, mid-century, art deco, and more.", date: "2026-05-23", end_date: null, time: "10:00 AM - 5:00 PM", location: "Waterfront Plaza, 231 Witherspoon St", category: "Market", image_url: null, is_approved: true, submitted_by: null, submitted_email: null, created_at: "",
+  },
+  {
+    id: "9", title: "Give for Good Louisville — Registration Opens", description: "Registration opens for Louisville's annual online giving day (September 10). Corridor nonprofits: sign up to participate and rally your supporters.", date: "2026-06-01", end_date: null, time: "All Day", location: "Online — giveforgoodlouisville.org", category: "Community", image_url: null, is_approved: true, submitted_by: null, submitted_email: null, created_at: "",
+  },
+  {
+    id: "10", title: "Give for Good Louisville — Giving Day", description: "Louisville's biggest day of giving. Support corridor nonprofits like Resolve KY, KAIA, Louisville Makes Games, and more through the Community Foundation of Louisville.", date: "2026-09-10", end_date: null, time: "All Day", location: "Online — giveforgoodlouisville.org", category: "Community", image_url: null, is_approved: true, submitted_by: null, submitted_email: null, created_at: "",
   },
 ];
 

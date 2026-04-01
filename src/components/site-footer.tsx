@@ -10,8 +10,8 @@ export function SiteFooter() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold text-xs">
-                EB
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4" aria-hidden="true"><path d="M12 2C10.2 5.5 7 7.5 7 11c0 2.8 2.2 5 5 5s5-2.2 5-5c0-3.5-3.2-5.5-5-9zM12 14.5c-1.9 0-3.5-1.6-3.5-3.5 0-2.1 1.8-3.5 3.5-6.2 1.7 2.7 3.5 4.1 3.5 6.2 0 1.9-1.6 3.5-3.5 3.5zM8 17.5c0 0-1 .5-1 1.5s1 2 1 2h8s1-1 1-2-.9-1.5-1-1.5H8z"/></svg>
               </div>
               <span className="font-semibold">{SITE_NAME}</span>
             </div>

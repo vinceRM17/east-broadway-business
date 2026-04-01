@@ -47,7 +47,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 to-background">
+      <section className="relative overflow-hidden bg-gradient-to-b from-primary/10 via-secondary/20 to-background">
         <div className="container mx-auto px-4 py-20 sm:py-28 lg:py-36">
           <div className="mx-auto max-w-3xl text-center">
             <Badge variant="secondary" className="mb-4">
@@ -57,7 +57,10 @@ export default function HomePage() {
               East Broadway
               <span className="block text-primary">Business Association</span>
             </h1>
-            <p className="mt-6 text-lg text-muted-foreground sm:text-xl max-w-2xl mx-auto">
+            <p className="mt-2 text-sm font-medium tracking-widest uppercase text-primary/70">
+              Louisville, Kentucky
+            </p>
+            <p className="mt-4 text-lg text-muted-foreground sm:text-xl max-w-2xl mx-auto">
               Connecting businesses and community along Louisville&apos;s East
               Broadway corridor. Together, we&apos;re building a vibrant, thriving
               neighborhood commercial district.
