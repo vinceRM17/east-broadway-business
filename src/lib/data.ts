@@ -110,6 +110,16 @@ export const businesses: Business[] = [
   {
     id: "34", name: "Old Forester's Paristown Hall", description: "Standing-room concert venue for national touring acts, collaborative projects, and local/regional artists. Kentucky Performing Arts venue.", category: "Entertainment / Music Venue", address: "724 Brent St, Louisville, KY 40204", phone: "(502) 584-7777", email: null, website: "https://www.paristown.com/paristownhall", image_url: null, latitude: 38.2437, longitude: -85.7298, hours: null, is_member: true, created_at: "",
   },
+  // Resolve KY and member organizations (702 Logan St)
+  {
+    id: "36", name: "Resolve KY", description: "Nonprofit innovation and coworking community built to support mission-driven entrepreneurs and nonprofit leaders. 4,500 sq ft space with collaborative work areas, meeting/board rooms, and education center. Founded 2025. Tagline: \"Community. Working. Space.\"", category: "Nonprofit / Services", address: "702 Logan St, Louisville, KY 40204", phone: "(502) 232-5029", email: "info@resolveky.org", website: "https://www.resolveky.org/", image_url: null, latitude: 38.2435, longitude: -85.7350, hours: null, is_member: true, created_at: "",
+  },
+  {
+    id: "37", name: "Kentucky Advocates for Inclusion & Accessibility (KAIA)", description: "Formerly KY IEP Advocate. Supports community members, parents, and caregivers with accurate, reliable information to become the best advocates for inclusion and accessibility in home, school, and community settings. Based at Resolve KY.", category: "Nonprofit / Services", address: "702 Logan St, Louisville, KY 40204", phone: "(502) 386-1072", email: null, website: "https://www.kaiaky.org/", image_url: null, latitude: 38.2435, longitude: -85.7351, hours: "Mon-Fri 8am-8pm", is_member: true, created_at: "",
+  },
+  {
+    id: "38", name: "Louisville Makes Games / Warp Zone Louisville", description: "Kentucky's first collaborative workspace focused on game creators. 501(c)(3) nonprofit supporting video game and tabletop game developers. Runs Local Game Harvest, the biggest indie game showcase in Kentucky. Based at Resolve KY.", category: "Technology Services", address: "702 Logan St, Louisville, KY 40204", phone: null, email: null, website: "https://louisvillemakesgames.org/", image_url: null, latitude: 38.2435, longitude: -85.7349, hours: "24/7 member access", is_member: true, created_at: "",
+  },
   {
     id: "35", name: "The Village Market Food Hall", description: "Louisville's first collective food hall with 5+ restaurant concepts, Jeff's Donuts, and a full bar under one roof.", category: "Restaurant", address: "712 Brent St, Louisville, KY 40204", phone: "(502) 676-7843", email: null, website: "https://www.villagemarketfoodhall.com/", image_url: null, latitude: 38.2438, longitude: -85.7296, hours: "Mon-Thu 11am-8pm, Fri-Sat 11am-9pm, Sun 11am-8pm", is_member: true, created_at: "",
   },
@@ -139,5 +149,8 @@ export const events: Event[] = [
 export const leaders: Leader[] = [
   {
     id: "1", name: "Terry Zink", title: "On Broadway Louisville", bio: "Terry Zink runs On Broadway Louisville and the Epping District, a multi-building revitalization project spanning 70,000+ sq ft across 6 historic buildings on the 800 block of East Broadway. The buildings have been in the Zink family for 40+ years. The development includes the historic Broadway Theater (built 1915), Encore Venue, Red Line Performing Arts, and Locals Food Hub.", image_url: null, email: "info@onbroadwaylouisville.com", phone: null, order: 1, created_at: "",
+  },
+  {
+    id: "2", name: "Vince Cain", title: "Founder & President, Resolve KY", bio: "Vince Cain, PMP, is the founder and president of Resolve KY, a nonprofit innovation and coworking community at 702 Logan Street supporting mission-driven entrepreneurs and nonprofit leaders. He also founded Right Mind Growth Consulting and serves on the boards of Best Buddies of Kentucky, The Pete Foundation, PMI Kentuckiana, and the Southwest Center.", image_url: null, email: "info@resolveky.org", phone: "(502) 232-5029", order: 2, created_at: "",
   },
 ];
