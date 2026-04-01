@@ -14,12 +14,25 @@ export const NAV_LINKS = [
 
 export const BUSINESS_CATEGORIES = [
   "Restaurant",
-  "Coffee & Drinks",
   "Retail",
-  "Services",
+  "Retail / Office",
+  "Retail / Repair",
+  "Auto Services",
+  "Auto Sales",
+  "Healthcare",
+  "Healthcare / Mental Health",
+  "Veterinary / Healthcare",
   "Professional Services",
-  "Arts & Culture",
-  "Health & Wellness",
+  "Legal Services",
+  "Technology Services",
+  "Specialty Services",
+  "Coworking / Office",
+  "Event Venue",
+  "Entertainment / Music Venue",
+  "Nonprofit / Services",
+  "Nonprofit / Youth Services",
+  "Property Management",
+  "Education",
 ] as const;
 
 export const EVENT_CATEGORIES = [
@@ -33,7 +46,7 @@ export const EVENT_CATEGORIES = [
 ] as const;
 
 export const MAPBOX_CENTER = {
-  longitude: -85.7435,
+  longitude: -85.7445,
   latitude: 38.2390,
-  zoom: 15.5,
+  zoom: 14.8,
 } as const;
