@@ -150,7 +150,4 @@ export const leaders: Leader[] = [
   {
     id: "1", name: "Terry Zink", title: "On Broadway Louisville", bio: "Terry Zink runs On Broadway Louisville and the Epping District, a multi-building revitalization project spanning 70,000+ sq ft across 6 historic buildings on the 800 block of East Broadway. The buildings have been in the Zink family for 40+ years. The development includes the historic Broadway Theater (built 1915), Encore Venue, Red Line Performing Arts, and Locals Food Hub.", image_url: null, email: "info@onbroadwaylouisville.com", phone: null, order: 1, created_at: "",
   },
-  {
-    id: "2", name: "Vince Cain", title: "Founder & President, Resolve KY", bio: "Vince Cain, PMP, is the founder and president of Resolve KY, a nonprofit innovation and coworking community at 702 Logan Street supporting mission-driven entrepreneurs and nonprofit leaders. He also founded Right Mind Growth Consulting and serves on the boards of Best Buddies of Kentucky, The Pete Foundation, PMI Kentuckiana, and the Southwest Center.", image_url: null, email: "info@resolveky.org", phone: "(502) 232-5029", order: 2, created_at: "",
-  },
 ];
