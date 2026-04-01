@@ -1,65 +1,175 @@
-import Image from "next/image";
+import Link from "next/link";
+import {
+  ArrowRight,
+  Building2,
+  Calendar,
+  Users,
+  MapPin,
+  Heart,
+  TrendingUp,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 
-export default function Home() {
+const IMPACT_STATS = [
+  { label: "Member Businesses", value: "30+", icon: Building2 },
+  { label: "Community Events/Year", value: "12+", icon: Calendar },
+  { label: "Neighborhoods Served", value: "11", icon: MapPin },
+  { label: "Years of Investment", value: "$5M+", icon: TrendingUp },
+];
+
+const GOALS = [
+  {
+    title: "Support Local Businesses",
+    description:
+      "Provide resources, networking, and collective marketing to help corridor businesses thrive.",
+  },
+  {
+    title: "Beautify the Corridor",
+    description:
+      "Partner with Louisville Metro on streetscape improvements, public art, and greenspace.",
+  },
+  {
+    title: "Build Community",
+    description:
+      "Host events that bring residents, businesses, and visitors together along East Broadway.",
+  },
+  {
+    title: "Advocate for the Corridor",
+    description:
+      "Represent business and community interests in zoning, infrastructure, and development decisions.",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 to-background">
+        <div className="container mx-auto px-4 py-20 sm:py-28 lg:py-36">
+          <div className="mx-auto max-w-3xl text-center">
+            <Badge variant="secondary" className="mb-4">
+              Reactivated in 2026
+            </Badge>
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+              East Broadway
+              <span className="block text-primary">Business Association</span>
+            </h1>
+            <p className="mt-6 text-lg text-muted-foreground sm:text-xl max-w-2xl mx-auto">
+              Connecting businesses and community along Louisville&apos;s East
+              Broadway corridor. Together, we&apos;re building a vibrant, thriving
+              neighborhood commercial district.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+              <Button size="lg" render={<Link href="/directory" />}>
+                Explore the Corridor
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+              <Button variant="outline" size="lg" render={<Link href="/get-involved" />}>
+                <Heart className="mr-2 h-4 w-4" />
+                Get Involved
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Impact Stats */}
+      <section className="border-y bg-muted/30">
+        <div className="container mx-auto px-4 py-12">
+          <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
+            {IMPACT_STATS.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <stat.icon className="mx-auto mb-2 h-6 w-6 text-primary" />
+                <div className="text-3xl font-bold">{stat.value}</div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Goals */}
+      <section className="container mx-auto px-4 py-16 sm:py-20">
+        <div className="mx-auto max-w-2xl text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight">Our Goals</h2>
+          <p className="mt-3 text-muted-foreground">
+            The East Broadway Business Association is focused on four key areas
+            to strengthen our corridor.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {GOALS.map((goal) => (
+            <Card key={goal.title} className="border-t-4 border-t-primary">
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-2">{goal.title}</h3>
+                <p className="text-sm text-muted-foreground">{goal.description}</p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
-      </main>
-    </div>
+      </section>
+
+      <Separator />
+
+      {/* Broadway All The Way Callout */}
+      <section className="container mx-auto px-4 py-16 sm:py-20">
+        <div className="mx-auto max-w-3xl text-center">
+          <Badge variant="outline" className="mb-4">
+            Corridor Investment
+          </Badge>
+          <h2 className="text-3xl font-bold tracking-tight">
+            Broadway All The Way
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            East Broadway is part of Louisville&apos;s historic Broadway corridor,
+            stretching from the Ohio River to Baxter Avenue across 11 neighborhoods.
+            With a $5 million federal RAISE grant and a comprehensive master plan,
+            the corridor is being transformed into a safer, more walkable, and more
+            vibrant destination for all.
+          </p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <Button variant="outline" render={<Link href="/about" />}>
+              Learn More About Our Vision
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 py-16 text-center">
+          <Users className="mx-auto mb-4 h-10 w-10" />
+          <h2 className="text-3xl font-bold tracking-tight">
+            Join the Movement
+          </h2>
+          <p className="mt-3 mx-auto max-w-xl opacity-90">
+            Whether you own a business on the corridor, live nearby, or just love
+            East Broadway — there&apos;s a place for you. Help us build something
+            great together.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <Button
+              size="lg"
+              variant="secondary"
+              render={<Link href="/get-involved" />}
+            >
+              Become a Member
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+              render={<Link href="/events" />}
+            >
+              View Upcoming Events
+            </Button>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
