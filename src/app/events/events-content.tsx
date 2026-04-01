@@ -55,16 +55,24 @@ export function EventsContent({ events }: EventsContentProps) {
       .sort((a, b) => a.date.localeCompare(b.date));
   }, [events, categoryFilter, showPast]);
 
+  const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setError(null);
     const form = e.currentTarget;
     const formData = new FormData(form);
     startTransition(async () => {
-      const result = await submitEvent(formData);
-      if (result.success) {
-        setSubmitted(true);
+      try {
+        const result = await submitEvent(formData);
+        if (result.success) {
+          setSubmitted(true);
+        } else {
+          setError(result.error || "Something went wrong. Please try again.");
+        }
+      } catch {
+        setError("Failed to submit. Please try again.");
       }
     });
   };
@@ -141,6 +149,12 @@ export function EventsContent({ events }: EventsContentProps) {
                   </Button>
                 </div>
               ) : (
+                <>
+                {error && (
+                  <div className="mb-3 rounded-lg border border-destructive/50 bg-destructive/10 p-3 text-sm text-destructive">
+                    {error}
+                  </div>
+                )}
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="space-y-2">
                     <Label htmlFor="event-title">Event Title</Label>
@@ -204,6 +218,7 @@ export function EventsContent({ events }: EventsContentProps) {
                     {isPending ? "Submitting..." : "Submit Event"}
                   </Button>
                 </form>
+                </>
               )}
             </DialogContent>
           </Dialog>

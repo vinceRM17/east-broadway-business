@@ -49,17 +49,25 @@ const VOLUNTEER_OPPORTUNITIES = [
 
 export function GetInvolvedContent() {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
 
   const handleSubmit = (type: "business" | "volunteer" | "general") => (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setError(null);
     const form = e.currentTarget;
     const formData = new FormData(form);
     formData.set("type", type);
     startTransition(async () => {
-      const result = await submitInquiry(formData);
-      if (result.success) {
-        setSubmitted(true);
+      try {
+        const result = await submitInquiry(formData);
+        if (result.success) {
+          setSubmitted(true);
+        } else {
+          setError(result.error || "Something went wrong. Please try again.");
+        }
+      } catch {
+        setError("Failed to submit. Please try again.");
       }
     });
   };
@@ -82,6 +90,11 @@ export function GetInvolvedContent() {
 
   return (
     <Tabs defaultValue="business" className="max-w-3xl">
+      {error && (
+        <div className="mb-4 rounded-lg border border-destructive/50 bg-destructive/10 p-3 text-sm text-destructive">
+          {error}
+        </div>
+      )}
       <TabsList className="grid w-full grid-cols-3">
         <TabsTrigger value="business" className="gap-1.5">
           <Building2 className="h-4 w-4" />
