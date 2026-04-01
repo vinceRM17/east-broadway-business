@@ -123,6 +123,61 @@ export const businesses: Business[] = [
   {
     id: "35", name: "The Village Market Food Hall", description: "Louisville's first collective food hall with 5+ restaurant concepts, Jeff's Donuts, and a full bar under one roof.", category: "Restaurant", address: "712 Brent St, Louisville, KY 40204", phone: "(502) 676-7843", email: null, website: "https://www.villagemarketfoodhall.com/", image_url: null, latitude: 38.2438, longitude: -85.7296, hours: "Mon-Thu 11am-8pm, Fri-Sat 11am-9pm, Sun 11am-8pm", is_member: true, created_at: "",
   },
+  // Resolve KY additional member organizations
+  {
+    id: "39", name: "Beargrass Thunder", description: "Resolve KY member organization. Led by Jody Dahmer.", category: "Nonprofit / Services", address: "702 Logan St, Louisville, KY 40204", phone: null, email: null, website: "https://www.beargrassthunder.com", image_url: null, latitude: 38.2435, longitude: -85.7347, hours: null, is_member: true, created_at: "",
+  },
+  {
+    id: "40", name: "CrossRoads Missions", description: "Resolve KY member organization. Led by Rich Shanks.", category: "Nonprofit / Services", address: "702 Logan St, Louisville, KY 40204", phone: null, email: null, website: "https://crossroadsmissions.com", image_url: null, latitude: 38.2435, longitude: -85.7346, hours: null, is_member: true, created_at: "",
+  },
+  {
+    id: "41", name: "Dacy Day Wash", description: "Resolve KY member organization. Led by Richard Debow.", category: "Nonprofit / Services", address: "702 Logan St, Louisville, KY 40204", phone: null, email: null, website: "https://www.dacydaywash.com", image_url: null, latitude: 38.2435, longitude: -85.7345, hours: null, is_member: true, created_at: "",
+  },
+  {
+    id: "42", name: "Digado", description: "Resolve KY member organization. Led by Steve Bates.", category: "Technology Services", address: "702 Logan St, Louisville, KY 40204", phone: null, email: null, website: "https://digado.com/", image_url: null, latitude: 38.2435, longitude: -85.7344, hours: null, is_member: true, created_at: "",
+  },
+  {
+    id: "43", name: "EOS Worldwide (Zach Wardlaw)", description: "Resolve KY member. EOS Implementer helping organizations gain traction. Led by Zach Wardlaw.", category: "Professional Services", address: "702 Logan St, Louisville, KY 40204", phone: null, email: null, website: "https://www.eosworldwide.com/zach-wardlaw", image_url: null, latitude: 38.2435, longitude: -85.7343, hours: null, is_member: true, created_at: "",
+  },
+  {
+    id: "44", name: "Grant Ready Kentucky", description: "Resolve KY member organization helping nonprofits become grant-ready. Led by Sarah McIntee.", category: "Nonprofit / Services", address: "702 Logan St, Louisville, KY 40204", phone: null, email: null, website: "https://www.grantreadyky.org", image_url: null, latitude: 38.2435, longitude: -85.7342, hours: null, is_member: true, created_at: "",
+  },
+  {
+    id: "45", name: "Honey Bear Financials", description: "Resolve KY member organization. Led by Alex Clifton.", category: "Professional Services", address: "702 Logan St, Louisville, KY 40204", phone: null, email: null, website: "https://www.honeybearfinancials.com", image_url: null, latitude: 38.2435, longitude: -85.7341, hours: null, is_member: true, created_at: "",
+  },
+  {
+    id: "46", name: "IDEAS xLab", description: "Resolve KY member organization. Led by Josh Miller.", category: "Nonprofit / Services", address: "702 Logan St, Louisville, KY 40204", phone: null, email: null, website: "https://ideasxlab.com", image_url: null, latitude: 38.2436, longitude: -85.7350, hours: null, is_member: true, created_at: "",
+  },
+  {
+    id: "47", name: "Imagination Library of Louisville", description: "Resolve KY member organization promoting childhood literacy. Led by Maria Gurren.", category: "Nonprofit / Services", address: "702 Logan St, Louisville, KY 40204", phone: null, email: null, website: "https://imaginationlibrarylouisville.org", image_url: null, latitude: 38.2436, longitude: -85.7349, hours: null, is_member: true, created_at: "",
+  },
+  {
+    id: "48", name: "MedWater", description: "Resolve KY member organization. Led by Darrell Adams.", category: "Nonprofit / Services", address: "702 Logan St, Louisville, KY 40204", phone: null, email: null, website: "https://www.medwater.org", image_url: null, latitude: 38.2436, longitude: -85.7348, hours: null, is_member: true, created_at: "",
+  },
+  {
+    id: "49", name: "Nest Community Marketing", description: "Resolve KY member organization. Led by Robin Miller.", category: "Professional Services", address: "702 Logan St, Louisville, KY 40204", phone: null, email: null, website: "https://nestcommunitymarketing.com", image_url: null, latitude: 38.2436, longitude: -85.7347, hours: null, is_member: true, created_at: "",
+  },
+  {
+    id: "50", name: "Olmsted Parks Conservancy", description: "Resolve KY member organization preserving Louisville's Olmsted-designed parks. Led by Rachel Firkins.", category: "Nonprofit / Services", address: "702 Logan St, Louisville, KY 40204", phone: null, email: null, website: "https://www.olmstedparks.org", image_url: null, latitude: 38.2436, longitude: -85.7346, hours: null, is_member: true, created_at: "",
+  },
+  {
+    id: "51", name: "Open Eye", description: "Resolve KY member organization. Led by Eric Seto.", category: "Professional Services", address: "702 Logan St, Louisville, KY 40204", phone: null, email: null, website: "https://www.openeye.partners", image_url: null, latitude: 38.2436, longitude: -85.7345, hours: null, is_member: true, created_at: "",
+  },
+  {
+    id: "52", name: "Peace Catalyst International", description: "Resolve KY member organization. Led by Michelle West.", category: "Nonprofit / Services", address: "702 Logan St, Louisville, KY 40204", phone: null, email: null, website: "https://www.peacecatalyst.org", image_url: null, latitude: 38.2436, longitude: -85.7344, hours: null, is_member: true, created_at: "",
+  },
+  {
+    id: "53", name: "Reece Johns", description: "Resolve KY member. Led by Reece Johns.", category: "Professional Services", address: "702 Logan St, Louisville, KY 40204", phone: null, email: null, website: "https://reecejohns.com", image_url: null, latitude: 38.2436, longitude: -85.7343, hours: null, is_member: true, created_at: "",
+  },
+  {
+    id: "54", name: "Right Mind Growth Consulting", description: "Strategy consulting for nonprofits and mission-driven organizations. Based at Resolve KY.", category: "Professional Services", address: "702 Logan St, Louisville, KY 40204", phone: null, email: null, website: "https://rightmindky.com", image_url: null, latitude: 38.2436, longitude: -85.7342, hours: null, is_member: true, created_at: "",
+  },
+  {
+    id: "55", name: "Ryan Fenwick AAL", description: "Resolve KY member. Led by Ryan Fenwick.", category: "Professional Services", address: "702 Logan St, Louisville, KY 40204", phone: null, email: null, website: "https://www.fenwickpartnersllc.com", image_url: null, latitude: 38.2436, longitude: -85.7341, hours: null, is_member: true, created_at: "",
+  },
+  {
+    id: "56", name: "The Monarch Music & Arts Community", description: "Resolve KY member organization supporting music and arts community. Led by Drew Crawley.", category: "Arts & Culture", address: "702 Logan St, Louisville, KY 40204", phone: null, email: null, website: "https://themonarchmac.org", image_url: null, latitude: 38.2436, longitude: -85.7340, hours: null, is_member: true, created_at: "",
+  },
 ];
 
 export const events: Event[] = [
