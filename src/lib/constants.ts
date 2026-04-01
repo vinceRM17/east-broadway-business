@@ -33,6 +33,8 @@ export const BUSINESS_CATEGORIES = [
   "Nonprofit / Youth Services",
   "Property Management",
   "Education",
+  "Church",
+  "Arts & Culture",
 ] as const;
 
 export const EVENT_CATEGORIES = [
@@ -46,7 +48,7 @@ export const EVENT_CATEGORIES = [
 ] as const;
 
 export const MAPBOX_CENTER = {
-  longitude: -85.7445,
-  latitude: 38.2390,
+  longitude: -85.7365,
+  latitude: 38.2443,
   zoom: 14.8,
 } as const;
