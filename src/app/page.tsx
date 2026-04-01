@@ -14,10 +14,10 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 
 const IMPACT_STATS = [
-  { label: "Member Businesses", value: "30+", icon: Building2 },
-  { label: "Community Events/Year", value: "12+", icon: Calendar },
-  { label: "Neighborhoods Served", value: "11", icon: MapPin },
-  { label: "Years of Investment", value: "$5M+", icon: TrendingUp },
+  { label: "Corridor Businesses", value: "55+", icon: Building2 },
+  { label: "Neighborhoods Connected", value: "3", icon: MapPin },
+  { label: "Corridor Investment", value: "$5M+", icon: TrendingUp },
+  { label: "Years of History", value: "110+", icon: Calendar },
 ];
 
 const GOALS = [
@@ -51,19 +51,19 @@ export default function HomePage() {
         <div className="container mx-auto px-4 py-20 sm:py-28 lg:py-36">
           <div className="mx-auto max-w-3xl text-center">
             <Badge variant="secondary" className="mb-4">
-              Reactivated in 2026
+              Est. 2026 &middot; Louisville, KY
             </Badge>
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
               East Broadway
               <span className="block text-primary">Business Association</span>
             </h1>
-            <p className="mt-2 text-sm font-medium tracking-widest uppercase text-primary/70">
-              Louisville, Kentucky
+            <p className="mt-2 text-sm font-medium tracking-widest uppercase text-primary/60">
+              From the Historic Broadway Theater to Paristown
             </p>
             <p className="mt-4 text-lg text-muted-foreground sm:text-xl max-w-2xl mx-auto">
-              Connecting businesses and community along Louisville&apos;s East
-              Broadway corridor. Together, we&apos;re building a vibrant, thriving
-              neighborhood commercial district.
+              Uniting businesses, nonprofits, and neighbors along Louisville&apos;s
+              East Broadway corridor — from Smoketown through Phoenix Hill to
+              Paristown. Together, we&apos;re building something great.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
               <Button size="lg" render={<Link href="/directory" />}>
@@ -164,8 +164,7 @@ export default function HomePage() {
             </Button>
             <Button
               size="lg"
-              variant="outline"
-              className="border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/15 hover:border-primary-foreground/70"
+              className="bg-white/15 text-white border border-white/40 hover:bg-white/25"
               render={<Link href="/events" />}
             >
               View Upcoming Events
