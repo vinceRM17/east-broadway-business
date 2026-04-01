@@ -165,7 +165,7 @@ export default function HomePage() {
             <Button
               size="lg"
               variant="outline"
-              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+              className="border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/15 hover:border-primary-foreground/70"
               render={<Link href="/events" />}
             >
               View Upcoming Events

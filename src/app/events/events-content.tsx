@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useTransition } from "react";
 import { format, parseISO, isPast } from "date-fns";
+import { submitEvent } from "@/app/actions";
 import {
   Calendar,
   MapPin,
@@ -54,10 +55,18 @@ export function EventsContent({ events }: EventsContentProps) {
       .sort((a, b) => a.date.localeCompare(b.date));
   }, [events, categoryFilter, showPast]);
 
+  const [isPending, startTransition] = useTransition();
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    // In production, this would POST to a Supabase server action
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    startTransition(async () => {
+      const result = await submitEvent(formData);
+      if (result.success) {
+        setSubmitted(true);
+      }
+    });
   };
 
   return (
@@ -135,12 +144,13 @@ export function EventsContent({ events }: EventsContentProps) {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="space-y-2">
                     <Label htmlFor="event-title">Event Title</Label>
-                    <Input id="event-title" required placeholder="e.g., Community BBQ" />
+                    <Input id="event-title" name="title" required placeholder="e.g., Community BBQ" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="event-desc">Description</Label>
                     <Textarea
                       id="event-desc"
+                      name="description"
                       required
                       placeholder="What is this event about?"
                       rows={3}
@@ -149,24 +159,25 @@ export function EventsContent({ events }: EventsContentProps) {
                   <div className="grid grid-cols-2 gap-3">
                     <div className="space-y-2">
                       <Label htmlFor="event-date">Date</Label>
-                      <Input id="event-date" type="date" required />
+                      <Input id="event-date" name="date" type="date" required />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="event-time">Time</Label>
-                      <Input id="event-time" required placeholder="e.g., 6-8 PM" />
+                      <Input id="event-time" name="time" required placeholder="e.g., 6-8 PM" />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="event-location">Location</Label>
                     <Input
                       id="event-location"
+                      name="location"
                       required
                       placeholder="Address or venue name"
                     />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="event-category">Category</Label>
-                    <Select required>
+                    <Select name="category" required>
                       <SelectTrigger>
                         <SelectValue placeholder="Select category" />
                       </SelectTrigger>
@@ -182,15 +193,15 @@ export function EventsContent({ events }: EventsContentProps) {
                   <div className="grid grid-cols-2 gap-3">
                     <div className="space-y-2">
                       <Label htmlFor="event-name">Your Name</Label>
-                      <Input id="event-name" required />
+                      <Input id="event-name" name="submitted_by" required />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="event-email">Your Email</Label>
-                      <Input id="event-email" type="email" required />
+                      <Input id="event-email" name="submitted_email" type="email" required />
                     </div>
                   </div>
-                  <Button type="submit" className="w-full">
-                    Submit Event
+                  <Button type="submit" className="w-full" disabled={isPending}>
+                    {isPending ? "Submitting..." : "Submit Event"}
                   </Button>
                 </form>
               )}

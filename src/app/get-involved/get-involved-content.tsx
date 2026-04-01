@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
+import { submitInquiry } from "@/app/actions";
 import {
   Building2,
   HandHelping,
@@ -48,10 +49,19 @@ const VOLUNTEER_OPPORTUNITIES = [
 
 export function GetInvolvedContent() {
   const [submitted, setSubmitted] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (type: "business" | "volunteer" | "general") => (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    formData.set("type", type);
+    startTransition(async () => {
+      const result = await submitInquiry(formData);
+      if (result.success) {
+        setSubmitted(true);
+      }
+    });
   };
 
   if (submitted) {
@@ -110,37 +120,38 @@ export function GetInvolvedContent() {
           </CardContent>
         </Card>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit("business")} className="space-y-4">
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="biz-name">Your Name</Label>
-              <Input id="biz-name" required />
+              <Input id="biz-name" name="name" required />
             </div>
             <div className="space-y-2">
               <Label htmlFor="biz-business">Business Name</Label>
-              <Input id="biz-business" required />
+              <Input id="biz-business" name="business_name" required />
             </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="biz-email">Email</Label>
-              <Input id="biz-email" type="email" required />
+              <Input id="biz-email" name="email" type="email" required />
             </div>
             <div className="space-y-2">
               <Label htmlFor="biz-phone">Phone</Label>
-              <Input id="biz-phone" type="tel" />
+              <Input id="biz-phone" name="phone" type="tel" />
             </div>
           </div>
           <div className="space-y-2">
             <Label htmlFor="biz-message">Tell us about your business</Label>
             <Textarea
               id="biz-message"
+              name="message"
               rows={3}
               placeholder="What does your business do? How long have you been on the corridor?"
             />
           </div>
-          <Button type="submit" size="lg">
-            Apply for Membership
+          <Button type="submit" size="lg" disabled={isPending}>
+            {isPending ? "Submitting..." : "Apply for Membership"}
           </Button>
         </form>
       </TabsContent>
@@ -167,15 +178,15 @@ export function GetInvolvedContent() {
           ))}
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit("volunteer")} className="space-y-4">
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="vol-name">Your Name</Label>
-              <Input id="vol-name" required />
+              <Input id="vol-name" name="name" required />
             </div>
             <div className="space-y-2">
               <Label htmlFor="vol-email">Email</Label>
-              <Input id="vol-email" type="email" required />
+              <Input id="vol-email" name="email" type="email" required />
             </div>
           </div>
           <div className="space-y-2">
@@ -184,12 +195,13 @@ export function GetInvolvedContent() {
             </Label>
             <Textarea
               id="vol-message"
+              name="message"
               rows={3}
               placeholder="Which opportunities interest you? Any skills you'd like to contribute?"
             />
           </div>
-          <Button type="submit" size="lg">
-            Sign Up to Volunteer
+          <Button type="submit" size="lg" disabled={isPending}>
+            {isPending ? "Submitting..." : "Sign Up to Volunteer"}
           </Button>
         </form>
       </TabsContent>
@@ -204,28 +216,29 @@ export function GetInvolvedContent() {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit("general")} className="space-y-4">
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="gen-name">Your Name</Label>
-              <Input id="gen-name" required />
+              <Input id="gen-name" name="name" required />
             </div>
             <div className="space-y-2">
               <Label htmlFor="gen-email">Email</Label>
-              <Input id="gen-email" type="email" required />
+              <Input id="gen-email" name="email" type="email" required />
             </div>
           </div>
           <div className="space-y-2">
             <Label htmlFor="gen-message">Message</Label>
             <Textarea
               id="gen-message"
+              name="message"
               required
               rows={4}
               placeholder="How can we help?"
             />
           </div>
-          <Button type="submit" size="lg">
-            Send Message
+          <Button type="submit" size="lg" disabled={isPending}>
+            {isPending ? "Sending..." : "Send Message"}
           </Button>
         </form>
       </TabsContent>

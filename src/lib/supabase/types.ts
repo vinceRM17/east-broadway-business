@@ -18,8 +18,26 @@ export type Database = {
           is_member: boolean;
           created_at: string;
         };
-        Insert: Omit<Database["public"]["Tables"]["businesses"]["Row"], "id" | "created_at">;
-        Update: Partial<Database["public"]["Tables"]["businesses"]["Insert"]>;
+        Insert: {
+          name: string;
+          description: string;
+          category: string;
+          address: string;
+          phone?: string | null;
+          email?: string | null;
+          website?: string | null;
+          image_url?: string | null;
+          latitude: number;
+          longitude: number;
+          hours?: string | null;
+          is_member?: boolean;
+        };
+        Update: {
+          name?: string;
+          description?: string;
+          category?: string;
+          address?: string;
+        };
       };
       events: {
         Row: {
@@ -37,8 +55,26 @@ export type Database = {
           submitted_email: string | null;
           created_at: string;
         };
-        Insert: Omit<Database["public"]["Tables"]["events"]["Row"], "id" | "created_at" | "is_approved">;
-        Update: Partial<Database["public"]["Tables"]["events"]["Insert"]>;
+        Insert: {
+          title: string;
+          description: string;
+          date: string;
+          end_date?: string | null;
+          time: string;
+          location: string;
+          category: string;
+          image_url?: string | null;
+          submitted_by?: string | null;
+          submitted_email?: string | null;
+        };
+        Update: {
+          title?: string;
+          description?: string;
+          date?: string;
+          time?: string;
+          location?: string;
+          category?: string;
+        };
       };
       leaders: {
         Row: {
@@ -52,8 +88,20 @@ export type Database = {
           order: number;
           created_at: string;
         };
-        Insert: Omit<Database["public"]["Tables"]["leaders"]["Row"], "id" | "created_at">;
-        Update: Partial<Database["public"]["Tables"]["leaders"]["Insert"]>;
+        Insert: {
+          name: string;
+          title: string;
+          bio: string;
+          image_url?: string | null;
+          email?: string | null;
+          phone?: string | null;
+          order: number;
+        };
+        Update: {
+          name?: string;
+          title?: string;
+          bio?: string;
+        };
       };
       membership_inquiries: {
         Row: {
@@ -66,8 +114,19 @@ export type Database = {
           type: "business" | "volunteer" | "general";
           created_at: string;
         };
-        Insert: Omit<Database["public"]["Tables"]["membership_inquiries"]["Row"], "id" | "created_at">;
-        Update: Partial<Database["public"]["Tables"]["membership_inquiries"]["Insert"]>;
+        Insert: {
+          name: string;
+          email: string;
+          phone?: string | null;
+          business_name?: string | null;
+          message: string;
+          type: "business" | "volunteer" | "general";
+        };
+        Update: {
+          name?: string;
+          email?: string;
+          message?: string;
+        };
       };
     };
     Views: Record<string, never>;
