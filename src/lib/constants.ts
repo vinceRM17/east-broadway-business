@@ -48,7 +48,7 @@ export const EVENT_CATEGORIES = [
 ] as const;
 
 export const MAPBOX_CENTER = {
-  longitude: -85.7365,
-  latitude: 38.2443,
+  longitude: -85.7350,
+  latitude: 38.2445,
   zoom: 14.8,
 } as const;
